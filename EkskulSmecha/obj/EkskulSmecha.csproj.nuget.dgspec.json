@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\T450\\source\\repos\\EkskulSmecha\\EkskulSmecha\\EkskulSmecha.csproj": {}
+    "C:\\Users\\T450\\source\\repos\\EkskulSmecha\\EkskulSmecha\\EkskulSmecha\\EkskulSmecha.csproj": {}
   },
   "projects": {
-    "C:\\Users\\T450\\source\\repos\\EkskulSmecha\\EkskulSmecha\\EkskulSmecha.csproj": {
+    "C:\\Users\\T450\\source\\repos\\EkskulSmecha\\EkskulSmecha\\EkskulSmecha\\EkskulSmecha.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\T450\\source\\repos\\EkskulSmecha\\EkskulSmecha\\EkskulSmecha.csproj",
+        "projectUniqueName": "C:\\Users\\T450\\source\\repos\\EkskulSmecha\\EkskulSmecha\\EkskulSmecha\\EkskulSmecha.csproj",
         "projectName": "EkskulSmecha",
-        "projectPath": "C:\\Users\\T450\\source\\repos\\EkskulSmecha\\EkskulSmecha\\EkskulSmecha.csproj",
+        "projectPath": "C:\\Users\\T450\\source\\repos\\EkskulSmecha\\EkskulSmecha\\EkskulSmecha\\EkskulSmecha.csproj",
         "packagesPath": "C:\\Users\\T450\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\T450\\source\\repos\\EkskulSmecha\\EkskulSmecha\\obj\\",
+        "outputPath": "C:\\Users\\T450\\source\\repos\\EkskulSmecha\\EkskulSmecha\\EkskulSmecha\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

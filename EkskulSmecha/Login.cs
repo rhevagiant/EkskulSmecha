@@ -1,16 +1,16 @@
-using System;
+﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using Microsoft.VisualBasic.Logging;
+using EkskulSmecha;
 using Npgsql;
 
 namespace EkskulSmecha
 {
-    public partial class Register : Form
+    public partial class Login : Form
     {
         private const string ConnectionString = "Host=localhost;Username=postgres;Password=SMKbisa1234;Database=EkskulDatabase";
 
-        public Register()
+        public Login()
         {
             InitializeComponent();
             InitializeUI();
@@ -66,15 +66,38 @@ namespace EkskulSmecha
             txtProgli.Location = new System.Drawing.Point(150, 170);
             this.Controls.Add(txtProgli);
 
-            // Add a button for registration
+            // Add a button for login
+            Button btnLogin = new Button();
+            btnLogin.Text = "Login";
+            btnLogin.Location = new System.Drawing.Point(150, 200);
+            btnLogin.Click += (s, ev) => AuthenticateUser(txtUsername.Text, txtPassword.Text, txtNama.Text, txtKelas.Text, txtProgli.Text);
+            this.Controls.Add(btnLogin);
+
+
+            Label lblRegister = new Label();
+
+            lblRegister.Text = "Don't have an account? Click below button to create one:";
+            lblRegister.Location = new System.Drawing.Point(150, 230);
+            this.Controls.Add(lblRegister);
+
+            // Add a button to go to register page
             Button btnRegister = new Button();
-            btnRegister.Text = "Register";
-            btnRegister.Location = new System.Drawing.Point(150, 200);
-            btnRegister.Click += (s, ev) => RegisterUser(txtUsername.Text, txtPassword.Text, txtNama.Text, txtKelas.Text, txtProgli.Text);
+            btnRegister.Text = "Create Account";
+            btnRegister.Location = new System.Drawing.Point(150, 260);
+            btnRegister.Click += (s, ev) => RedirectRegisterForm();
             this.Controls.Add(btnRegister);
         }
 
-        private void RegisterUser(string username, string password, string nama, string kelas, string progli)
+        private void RedirectRegisterForm()
+        {
+            // Redirect to the Register form
+            this.Hide(); // Hide the current form
+            Register registerForm = new Register();
+            registerForm.Show();
+        }
+
+
+        private void AuthenticateUser(string username, string password, string nama, string kelas, string progli)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString))
             {
@@ -82,33 +105,35 @@ namespace EkskulSmecha
                 using (NpgsqlCommand command = new NpgsqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "INSERT INTO users (username, password, nama, kelas, progli) VALUES (@username, @password, @nama, @kelas, @progli)";
+                    command.CommandText = "SELECT COUNT(*) FROM users WHERE username = @username AND password = @password";
                     command.Parameters.AddWithValue("@username", username);
                     command.Parameters.AddWithValue("@password", password);
                     command.Parameters.AddWithValue("@nama", nama);
                     command.Parameters.AddWithValue("@kelas", kelas);
                     command.Parameters.AddWithValue("@progli", progli);
 
-                    command.ExecuteNonQuery();
+                    int count = Convert.ToInt32(command.ExecuteScalar());
 
-                    MessageBox.Show("Registration successful!");
-
-                    //Redirect to the Login form after successful registration
-                    this.Hide(); // Hide the current form
-                    Login loginForm = new Login();
-                    loginForm.Show();
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Login successful!");
+                        this.Hide(); // Hide the current form
+                        //Dashboard dashboard = new Dashboard();
+                        //dashboard.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid credentials!");
+                    }
                 }
             }
         }
 
-        private void Register_Load(object sender, EventArgs e)
+        private void Login_Load(object sender, EventArgs e)
         {
 
         }
     }
-
-
-    /*
     static class Program
     {
         /// <summary>
@@ -119,8 +144,8 @@ namespace EkskulSmecha
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Register());
+            Application.Run(new Login());
         }
     }
-    */
+
 }
