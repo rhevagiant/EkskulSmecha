@@ -21,4 +21,7 @@ C:\Users\T450\source\repos\EkskulSmecha\EkskulSmecha\EkskulSmecha\obj\Debug\net8
 C:\Users\T450\source\repos\EkskulSmecha\EkskulSmecha\EkskulSmecha\obj\Debug\net8.0-windows\EkskulSmecha.genruntimeconfig.cache
 C:\Users\T450\source\repos\EkskulSmecha\EkskulSmecha\EkskulSmecha\obj\Debug\net8.0-windows\ref\EkskulSmecha.dll
 C:\Users\T450\source\repos\EkskulSmecha\EkskulSmecha\EkskulSmecha\obj\Debug\net8.0-windows\EkskulSmecha.Login.resources
+<<<<<<< HEAD:EkskulSmecha/obj/Debug/net8.0-windows/EkskulSmecha.csproj.FileListAbsolute.txt
 C:\Users\T450\source\repos\EkskulSmecha\EkskulSmecha\EkskulSmecha\obj\Debug\net8.0-windows\EkskulSmecha.EditUserForm.resources
+=======
+>>>>>>> 05e50c6c2ef93c5bcd26ebeb11d7a5b92a3ff587:EkskulSmecha/EkskulSmecha/obj/Debug/net8.0-windows/EkskulSmecha.csproj.FileListAbsolute.txt
