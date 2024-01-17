@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EkskulSmecha")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3023852e7a2532ec7fbaa54160d8cac45b5f40d4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("EkskulSmecha")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EkskulSmecha")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

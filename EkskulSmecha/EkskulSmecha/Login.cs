@@ -70,7 +70,7 @@ namespace EkskulSmecha
             Button btnLogin = new Button();
             btnLogin.Text = "Login";
             btnLogin.Location = new System.Drawing.Point(150, 200);
-            btnLogin.Click += (s, ev) => AuthenticateUser(txtUsername.Text, txtPassword.Text);
+            btnLogin.Click += (s, ev) => AuthenticateUser(txtUsername.Text, txtPassword.Text, txtNama.Text, txtKelas.Text, txtProgli.Text);
             this.Controls.Add(btnLogin);
 
 
@@ -97,7 +97,7 @@ namespace EkskulSmecha
         }
 
 
-        private void AuthenticateUser(string username, string password)
+        private void AuthenticateUser(string username, string password, string nama, string kelas, string progli)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString))
             {
@@ -107,7 +107,10 @@ namespace EkskulSmecha
                     command.Connection = connection;
                     command.CommandText = "SELECT COUNT(*) FROM users WHERE username = @username AND password = @password";
                     command.Parameters.AddWithValue("@username", username);
-                    command.Parameters.AddWithValue("@password", password); // Hash the password in a real application
+                    command.Parameters.AddWithValue("@password", password);
+                    command.Parameters.AddWithValue("@nama", nama);
+                    command.Parameters.AddWithValue("@kelas", kelas);
+                    command.Parameters.AddWithValue("@progli", progli);
 
                     int count = Convert.ToInt32(command.ExecuteScalar());
 

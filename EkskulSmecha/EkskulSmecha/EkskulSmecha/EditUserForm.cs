@@ -69,7 +69,7 @@ namespace EkskulSmecha
 
         private void LoadUserData()
         {
-            using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString)) 
+            using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString))
             {
                 connection.Open();
                 using (NpgsqlCommand command = new NpgsqlCommand())
@@ -120,7 +120,7 @@ namespace EkskulSmecha
             }
         }
 
-        private void EditUserForm_Load (object sender, EventArgs e)
+        private void EditUserForm_Load(object sender, EventArgs e)
         {
 
         }
